@@ -12,8 +12,8 @@ public class ConvertController {
     @Autowired
     private ConvertService convertService;
     @GetMapping({"/convertMoney"})
-    public String resultConvert(@RequestParam String usd, Model model){
-        model.addAttribute("usd", convertService.convert(Double.parseDouble(usd)));
+    public String resultConvert(@RequestParam double usd, Model model){
+        model.addAttribute("usd", convertService.convert(usd));
         return "result";
     }
 }
