@@ -11,11 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-<%--    <h2>Dictionary</h2>--%>
-<%--    <form action="/trans">--%>
-<%--      <input type="text" placeholder="Nhập từ tiếng Anh" name="dictionary">--%>
-<%--      <input type="submit">--%>
-<%--    </form>--%>
     <h2>Map dictionary</h2>
     <form action="/map">
       <input type="text" placeholder="Nhập từ tiếng Anh" name="dictionary">

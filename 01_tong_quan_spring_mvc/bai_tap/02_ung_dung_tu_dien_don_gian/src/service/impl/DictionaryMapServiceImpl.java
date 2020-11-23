@@ -7,11 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 @Service
 public class DictionaryMapServiceImpl implements DictionaryService {
-//    @Override
-//    public String translate(String dictionary) {
-//        return null;
-//    }
-
 
     @Override
     public String translateByMap(String dictionary) {

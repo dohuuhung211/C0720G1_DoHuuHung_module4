@@ -12,15 +12,9 @@ import service.DictionaryService;
 
 @Controller
 public class DictionaryController {
-    @Qualifier("dictionaryMapServiceImpl")
 
     @Autowired
     private DictionaryService dictionaryService;
-//    @GetMapping("/trans")
-//    public String translateDictionary(@RequestParam String dictionary, Model model){
-//        model.addAttribute("dictionary", dictionaryService.translate(dictionary));
-//        return "result";
-//    }
     @GetMapping("/map")
     public String translateByMap(@RequestParam String dictionary, Model model){
         model.addAttribute("dictionary", dictionaryService.translateByMap(dictionary));
