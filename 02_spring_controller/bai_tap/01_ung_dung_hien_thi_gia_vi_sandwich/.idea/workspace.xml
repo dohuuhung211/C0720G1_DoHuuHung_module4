@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="356d65a6-223c-4b9d-89e6-f2a710710a6f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/01_ung_dung_kiem_tra_email/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/01_ung_dung_kiem_tra_email/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/01_ung_dung_kiem_tra_email/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/01_ung_dung_kiem_tra_email/.idea/libraries/Spring_5_2_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/01_ung_dung_kiem_tra_email/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/01_ung_dung_kiem_tra_email/.idea/modules/01_ung_dung_kiem_tra_email.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/01_ung_dung_kiem_tra_email/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/01_ung_dung_kiem_tra_email_hop_le/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="G:\C0720G1_Do_Huu_Hung\module4\02_spring_controller\bai_tap\01_ung_dung_hien_thi_gia_vi_sandwich\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1kgYQTbfHtje4IrhQ64Fy4pDfpq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\C0720G1_Do_Huu_Hung\module4\02_spring_controller\bai_tap\01_ung_dung_hien_thi_gia_vi_sandwich\web\WEB-INF" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="356d65a6-223c-4b9d-89e6-f2a710710a6f" name="Default Changelist" comment="" />
+      <created>1606123685608</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606123685608</updated>
+      <workItem from="1606123690396" duration="174000" />
+      <workItem from="1606123993548" duration="68000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Project_Structure" timestamp="1606124004149">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1606124004148" />
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1606124053278">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606124053278" />
+    <state x="444" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1606123983148">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="444" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1606123983148" />
+    <state x="209" y="0" key="new project wizard" timestamp="1606124061687">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1606124061687" />
+  </component>
+</project>
