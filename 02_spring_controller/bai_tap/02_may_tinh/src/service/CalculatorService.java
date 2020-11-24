@@ -1,5 +1,8 @@
 package service;
 
 public interface CalculatorService {
-    int calculated(int num1, int num2);
+    int addCal(int num1, int num2);
+    int subCal(int num1, int num2);
+    int mulCal(int num1, int num2);
+    int divCal(int num1, int num2);
 }
