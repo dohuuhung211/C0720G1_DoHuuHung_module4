@@ -1,5 +1,6 @@
 package com.example.service.impl;
 
+import com.example.model.Email;
 import com.example.service.EmailService;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +23,17 @@ public class EmailServiceImpl implements EmailService {
 
     @Override
     public List<Integer> listPage() {
+        pageList = new ArrayList<>();
         pageList.add(10);
         pageList.add(15);
         pageList.add(20);
         pageList.add(25);
         pageList.add(30);
         return pageList;
+    }
+
+    @Override
+    public Email save(Email email) {
+        return email;
     }
 }

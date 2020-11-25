@@ -1,5 +1,4 @@
 package com.example.model;
-
 public class Email {
     private String languages;
     private int pageSize;
