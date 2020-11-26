@@ -10,7 +10,7 @@
         <form th:object="${product}" method="post" novalidate="novalidate" th:action="@{/product/save}">
             <div>
                 <label>ID: </label>
-                <input type="number" th:field="*{id}" readonly/>
+                <input type="hidden" th:field="*{id}" readonly/>
             </div>
 
             <div>

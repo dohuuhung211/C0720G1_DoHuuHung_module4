@@ -13,10 +13,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ProductController {
-    private ProductService productService = new ProductServiceImpl();
+//    private ProductService productService = new ProductServiceImpl();
+    @Autowired
+    private ProductService productService;
     @GetMapping("/")
     public String getAllProduct(Model model){
         model.addAttribute("productList", productService.getAllProduct());
@@ -29,8 +32,7 @@ public class ProductController {
     }
     @PostMapping("/product/save")
     public String save(Product product, RedirectAttributes redirectAttributes){
-        int id = (int) (Math.random() * 1000);
-        product.setId(id);
+        product.setId(productService.getId() + 1);
         productService.save(product);
         redirectAttributes.addFlashAttribute("message", "Successfully!");
         return "redirect:/";

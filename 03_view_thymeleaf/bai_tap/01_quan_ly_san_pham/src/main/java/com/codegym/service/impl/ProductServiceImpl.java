@@ -44,4 +44,12 @@ public class ProductServiceImpl implements ProductService {
     public void save(Product product) {
         productMap.put(product.getId(), product);
     }
+
+    @Override
+    public int getId() {
+        List<Product> products= new ArrayList<>(productMap.values());
+        return products.get(products.size()-1).getId();
+
+    }
+
 }
