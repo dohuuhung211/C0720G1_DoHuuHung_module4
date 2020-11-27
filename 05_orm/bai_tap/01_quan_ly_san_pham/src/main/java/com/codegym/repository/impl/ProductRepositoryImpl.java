@@ -32,12 +32,18 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public void edit(int id, Product product) {
-
+        EntityTransaction entityTransaction = BaseRepository.entityManager.getTransaction();
+        entityTransaction.begin();
+        BaseRepository.entityManager.merge(product);
+        entityTransaction.commit();
     }
 
     @Override
     public void delete(int id) {
-
+        EntityTransaction entityTransaction = BaseRepository.entityManager.getTransaction();
+        entityTransaction.begin();
+        BaseRepository.entityManager.remove(findById(id));
+        entityTransaction.commit();
     }
 
     @Override
