@@ -38,6 +38,12 @@
             border: 1px solid white;
             white-space: nowrap;
         }
+        .col-6, .col-2{
+            float: left;
+        }
+        form{
+            float: right;
+        }
     </style>
 </head>
 <body>
@@ -50,12 +56,17 @@
         });
     });
 </script>
-
-    <div id="head" align="center" style="margin-bottom: 15px">
-        <h2>List Blog</h2>
-        <a th:href="@{/blog/create}" class="btn btn-secondary">Add new Blog</a>
-    </div>
     <div class="container">
+        <div id="head" align="center" style="margin-bottom: 15px">
+            <h2>List Blog</h2>
+            <a th:href="@{/blog/create}" class="btn btn-secondary">Add new Blog</a>
+
+            <form th:action="@{/blog/search}" method="post" class="col-6">
+                <!--            <input class="form-control" name="id" placeholder="Search by ID">-->
+                <input class="form-control col-6 mr-5" name="search" placeholder="Title or author's name" >
+                <button class="btn btn-secondary col-2" type="submit">Search</button>
+            </form>
+        </div>
         <table class="table table-striped" id="tableCustomer">
             <thead class="thead-dark">
             <tr>
@@ -71,7 +82,7 @@
             <tr th:each="row : ${blogList}">
                 <td scope="col" th:text="${row.getIdCode()}"></td>
                 <td scope="col" th:text="${row.name}"></td>
-                <td scope="col" th:text="${row.getStringContent()}"></td>
+                <td scope="col" th:text="${row.getStringContent()}" data-toggle="tooltip" data-placement="top" th:title="${row.getContent()}"></td>
 <!--                <td scope="col" id="cell"><span th:text="${row.content}"></span></td>-->
                 <td scope="col" th:text="${row.author}"></td>
                 <td scope="col" th:text="${row.dateWrite}"></td>

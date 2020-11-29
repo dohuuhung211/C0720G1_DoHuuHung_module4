@@ -4,12 +4,16 @@ import com.example.blogexample.model.Blog;
 import com.example.blogexample.service.BlogService;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.List;
 
 @Controller
 public class BlogController {
@@ -57,5 +61,11 @@ public class BlogController {
     public String viewBlog(@PathVariable int id, Model model){
         model.addAttribute("blogDetail", blogService.findById(id));
         return "view";
+    }
+    @PostMapping("/blog/search")
+    public String search(@RequestParam String search, Model model){
+        List<Blog> blogList = blogService.search(search);
+        model.addAttribute("blogList", blogList);
+        return "index";
     }
 }

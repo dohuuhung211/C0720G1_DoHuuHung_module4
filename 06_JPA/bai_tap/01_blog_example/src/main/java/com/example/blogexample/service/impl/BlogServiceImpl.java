@@ -35,4 +35,9 @@ public class BlogServiceImpl implements BlogService {
     public void delete(int id) {
         blogRepository.delete(findById(id));
     }
+
+    @Override
+    public List<Blog> search(String search) {
+        return blogRepository.findByNameContainingOrAuthorContaining(search, search);
+    }
 }
