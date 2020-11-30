@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        table th{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Blog Details</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Name:</th>
+                <td th:text="${blogDetail.name}"></td>
+            </tr>
+            <tr>
+                <th>Synopsis:</th>
+                <td th:text="${blogDetail.getContent()}"></td>
+            </tr>
+            <tr>
+                <th>Author:</th>
+                <td th:text="${blogDetail.getAuthor()}"></td>
+            </tr>
+            <tr>
+                <th>Date published</th>
+                <td th:text="${blogDetail.getDateWrite()}"></td>
+            </tr>
+            <tr>
+                <td style="background-color: white">
+                    <a th:href="@{/}" class="btn btn-outline-info">Back</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

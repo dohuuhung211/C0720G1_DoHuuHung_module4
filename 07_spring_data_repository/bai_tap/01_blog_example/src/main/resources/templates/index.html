@@ -44,6 +44,10 @@
         form{
             float: right;
         }
+        .page-link{
+            width: 80px;
+            display: inline;
+        }
     </style>
 </head>
 <body>
@@ -61,9 +65,9 @@
             <h2>List Blog</h2>
             <a th:href="@{/blog/create}" class="btn btn-secondary">Add new Blog</a>
 
-            <form th:action="@{/blog/search}" method="post" class="col-6">
-                <!--            <input class="form-control" name="id" placeholder="Search by ID">-->
-                <input class="form-control col-6 mr-5" name="search" placeholder="Title or author's name" >
+            <form action="/" class="col-6">
+<!--                <input class="form-control" name="id" placeholder="Search by ID">-->
+                <input class="form-control col-6 mr-5" name="searchName" placeholder="Input name" >
                 <button class="btn btn-secondary col-2" type="submit">Search</button>
             </form>
         </div>
@@ -74,6 +78,7 @@
                 <th scope="col">name</th>
                 <th scope="col">Synopsis</th>
                 <th scope="col">Author</th>
+                <th scope="col">Category</th>
                 <th scope="col">Date published</th>
                 <th scope="col">Action</th>
             </tr>
@@ -85,6 +90,7 @@
                 <td scope="col" th:text="${row.getStringContent()}" data-toggle="tooltip" data-placement="top" th:title="${row.getContent()}"></td>
 <!--                <td scope="col" id="cell"><span th:text="${row.content}"></span></td>-->
                 <td scope="col" th:text="${row.author}"></td>
+                <td scope="col" th:text="${row.category.name}"></td>
                 <td scope="col" th:text="${row.dateWrite}"></td>
                 <td>
                     <a th:href="@{/blog/{id}/edit(id=${row.getId()})}" class="btn btn-outline-danger">Edit</a>
@@ -94,6 +100,10 @@
             </tr>
             </tbody>
         </table>
+        <a class="page-link" th:if="${blogList.hasPrevious()}" th:href="@{/(page = ${blogList.number - 1})}">Previous</a>
+        <span th:text="${blogList.number + 1}"></span>/<span th:text="${blogList.totalPages}"></span>
+
+        <a class="page-link"  th:if="${blogList.hasNext()}" th:href="@{/(page = ${blogList.number + 1})}">Next</a>
         <p th:text="${message}"></p>
     </div>
 </body>
