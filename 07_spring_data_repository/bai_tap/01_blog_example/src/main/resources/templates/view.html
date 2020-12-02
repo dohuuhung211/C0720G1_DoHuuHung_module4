@@ -28,6 +28,10 @@
                 <td th:text="${blogDetail.getAuthor()}"></td>
             </tr>
             <tr>
+                <th>Category:</th>
+                <td th:text="${blogDetail.category.getName()}"></td>
+            </tr>
+            <tr>
                 <th>Date published</th>
                 <td th:text="${blogDetail.getDateWrite()}"></td>
             </tr>

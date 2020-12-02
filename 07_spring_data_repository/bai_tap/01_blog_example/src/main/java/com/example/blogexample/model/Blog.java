@@ -12,7 +12,7 @@ public class Blog {
     private String author;
     @Column(name = "date_write", columnDefinition = "date")
     private String dateWrite;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 

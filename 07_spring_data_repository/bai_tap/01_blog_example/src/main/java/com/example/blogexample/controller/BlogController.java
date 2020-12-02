@@ -62,6 +62,7 @@ public class BlogController {
     @GetMapping("/blog/{id}/delete")
     public String goDeletePage(@PathVariable int id, Model model){
         model.addAttribute("blog", blogService.findById(id));
+        model.addAttribute("categoryList", categoryService.findAll());
         return "delete";
     }
     @PostMapping("/blog/delete")
