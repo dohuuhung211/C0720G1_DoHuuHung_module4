@@ -1,12 +1,12 @@
 plugins {
-    id 'org.springframework.boot' version '2.4.0'
-    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
+    id 'war'
 }
 
-group = 'cg.wbd'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+group 'cg.wbd'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -20,8 +20,6 @@ dependencies {
     compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '1.11.22.RELEASE'
     compile group: 'org.springframework', name: 'spring-orm', version: '4.3.17.RELEASE'
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
-}
-
-test {
-    useJUnitPlatform()
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 }

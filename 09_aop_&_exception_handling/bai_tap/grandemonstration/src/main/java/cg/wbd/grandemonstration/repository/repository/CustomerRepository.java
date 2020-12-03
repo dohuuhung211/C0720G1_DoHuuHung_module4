@@ -1,4 +1,4 @@
-package cg.wbd.grandemonstration.repository;
+package cg.wbd.grandemonstration.repository.repository;
 
 import cg.wbd.grandemonstration.model.Customer;
 import org.springframework.data.domain.Page;

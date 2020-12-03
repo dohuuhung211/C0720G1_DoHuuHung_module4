@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1" cellspacing="2">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Amount</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="row : ${bookList}">
+            <td th:text="${row.getId()}"></td>
+            <td th:text="${row.getName()}"></td>
+            <td th:text="${row.getAuthor()}"></td>
+            <td th:text="${row.getAmount()}"></td>
+
+            <td>
+                <a th:href="@{/book/{id}/detail(id=${row.getId()})}">Borrow</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,5 +1,4 @@
 package cg.wbd.grandemonstration.service;
-
 import cg.wbd.grandemonstration.model.Province;
 
 import java.util.List;
@@ -27,4 +26,3 @@ public interface ProvinceService {
 
     void deleteAll();
 }
-
