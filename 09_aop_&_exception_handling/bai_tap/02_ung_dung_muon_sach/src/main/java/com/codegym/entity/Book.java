@@ -1,10 +1,10 @@
 package com.codegym.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "book")
+@Entity
+@Table(name = "book")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,15 +13,19 @@ public class Book {
     private String author;
     private int amount;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "borrow_book",
-            joinColumns = {@JoinColumn(name = "book_id")},
-            inverseJoinColumns = {@JoinColumn(name = "borrow_id")})
-    private List<Borrow> borrowList = new ArrayList<>();
+    @OneToMany(mappedBy = "book")
+    private List<CardStudentBook> cardStudentBooks;
+
 
     public Book() {
     }
-
+    public Book(int id, String name, String author, int amount, List<CardStudentBook> cardStudentBooks){
+        this.id = id;
+        this.name = name;
+        this.author = author;
+        this.amount = amount;
+        this.cardStudentBooks = cardStudentBooks;
+    }
     public int getId() {
         return id;
     }
@@ -54,11 +58,11 @@ public class Book {
         this.amount = amount;
     }
 
-    public List<Borrow> getBorrowList() {
-        return borrowList;
+    public List<CardStudentBook> getCardStudentBooks() {
+        return cardStudentBooks;
     }
 
-    public void setBorrowList(List<Borrow> borrowList) {
-        this.borrowList = borrowList;
+    public void setCardStudentBooks(List<CardStudentBook> cardStudentBooks) {
+        this.cardStudentBooks = cardStudentBooks;
     }
 }
