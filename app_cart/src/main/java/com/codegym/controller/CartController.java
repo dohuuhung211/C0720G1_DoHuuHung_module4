@@ -47,7 +47,16 @@ public class CartController {
     }
     @GetMapping("/list-cart")
     public ModelAndView getAllCart(@ModelAttribute(name = "cart") List<Product> cartList){
+
         ModelAndView modelAndView = new ModelAndView("list_cart", "cartList", cartList);
         return modelAndView;
+    }
+    @GetMapping("/remove-product/{id}")
+    public String removeProduct(@PathVariable int id, @ModelAttribute(name = "cart") List<Product> cartList){
+        Product product = cartList.get(id);
+        cartList.remove(id);
+        product.setAmount(product.getAmount()+1);
+        productService.save(product);
+        return "redirect:/list-cart";
     }
 }

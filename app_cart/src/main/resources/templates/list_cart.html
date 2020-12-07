@@ -11,11 +11,15 @@
         <td>ID Cart</td>
         <td>Name product</td>
         <td>Price</td>
+        <td>Action</td>
     </tr>
-    <tr th:each="product : ${cartList}">
+    <tr th:each="product, state : ${cartList}">
         <td th:text="${product.id}"></td>
         <td th:text="${product.name}"></td>
         <td th:text="${product.price}"></td>
+        <td>
+            <a th:href="@{/remove-product/{id}/(id=${state.index})}">Remove Product</a>
+        </td>
     </tr>
 </table>
 </body>
