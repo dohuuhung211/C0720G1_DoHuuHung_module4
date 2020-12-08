@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+
+<!--    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>-->
+<!--    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>-->
+<!--    <script src="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"></script>-->
+    <style>
+        /*#cell{*/
+        /*    display: -webkit-box;*/
+        /*    max-width: 300px;*/
+        /*    margin: 0 auto;*/
+        /*    line-height: 1.3;*/
+        /*    -webkit-line-clamp: 2;*/
+        /*    -webkit-box-orient: vertical;*/
+        /*    overflow: hidden;*/
+        /*    text-overflow: ellipsis;*/
+        /*    white-space: pre-wrap;*/
+        /*}*/
+        .container p{
+
+           font-weight: bold;
+            color: green;
+            font-size: 20px;
+            text-align: center;
+        }
+        table{
+            text-align: center;
+        }
+        th, td{
+            border: 1px solid white;
+            white-space: nowrap;
+        }
+        .col-6, .col-2{
+            float: left;
+        }
+        form{
+            float: right;
+        }
+        .page-link{
+            width: 80px;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+<!--<script>-->
+<!--    $(document).ready(function () {-->
+<!--        $('#tableCustomer').dataTable({-->
+<!--            "dom": 'lrtip',-->
+<!--            "lengthChange": false,-->
+<!--            "pageLength": 6-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
+    <div class="container">
+        <div id="head" align="center" style="margin-bottom: 15px">
+            <h2><span th:text="#{blog.list}">List</span> Blog</h2>
+            <a th:href="@{/blog/create}" class="btn btn-secondary">Add new Blog</a>
+
+            <form action="/" class="col-6">
+<!--                <input class="form-control" name="id" placeholder="Search by ID">-->
+                <input class="form-control col-6 mr-5" name="searchName" placeholder="Input name" >
+                <button class="btn btn-secondary col-2" type="submit">Search</button>
+            </form>
+        </div>
+        <table class="table table-striped" id="tableCustomer">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID Book</th>
+                <th scope="col"><span th:text="#{blog.name}">name</span></th>
+                <th scope="col"><span th:text="#{blog.synopsis}">Synopsis</span></th>
+                <th scope="col"><span th:text="#{blog.aut\
+
+                hor}">Author</span></th>
+
+                <th scope="col"><span th:text="#{blog.category}">Category</span></th>
+                <th scope="col"><span th:text="#{blog.date}">Date published</span></th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="row : ${blogList}">
+                <td scope="col" th:text="${row.getIdCode()}"></td>
+                <td scope="col" th:text="${row.name}"></td>
+                <td scope="col" th:text="${row.getStringContent()}" data-toggle="tooltip" data-placement="top" th:title="${row.getContent()}"></td>
+<!--                <td scope="col" id="cell"><span th:text="${row.content}"></span></td>-->
+                <td scope="col" th:text="${row.author}"></td>
+                <td scope="col" th:text="${row.category.name}"></td>
+                <td scope="col" th:text="${row.dateWrite}"></td>
+                <td>
+                    <a th:href="@{/blog/{id}/edit(id=${row.getId()})}" class="btn btn-outline-danger">Edit</a>
+                    <a th:href="@{/blog/{id}/delete(id=${row.getId()})}" class="btn btn-outline-secondary">Delete</a>
+                    <a th:href="@{/blog/{id}/view(id=${row.getId()})}" class="btn btn-outline-info">View</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a class="page-link" th:if="${blogList.hasPrevious()}" th:href="@{/(page = ${blogList.number - 1})}">Previous</a>
+        <span th:text="${blogList.number + 1}"></span>/<span th:text="${blogList.totalPages}"></span>
+
+        <a class="page-link"  th:if="${blogList.hasNext()}" th:href="@{/(page = ${blogList.number + 1})}">Next</a>
+        <p th:text="${message}"></p>
+    </div>
+</body>
+</html>

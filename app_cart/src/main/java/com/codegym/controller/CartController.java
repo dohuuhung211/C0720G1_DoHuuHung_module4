@@ -46,15 +46,20 @@ public class CartController {
         return "redirect:/";
     }
     @GetMapping("/list-cart")
-    public ModelAndView getAllCart(@ModelAttribute(name = "cart") List<Product> cartList){
+    public ModelAndView getAllCart(@ModelAttribute(name = "cart") List<Product> cartList, RedirectAttributes redirectAttributes){
 
         ModelAndView modelAndView = new ModelAndView("list_cart", "cartList", cartList);
+        if (cartList.isEmpty()){
+            redirectAttributes.addFlashAttribute("message", "List cart is empty!");
+            return new ModelAndView("redirect:/", "productList", productService.findAllProduct());
+        }
         return modelAndView;
     }
     @GetMapping("/remove-product/{id}")
-    public String removeProduct(@PathVariable int id, @ModelAttribute(name = "cart") List<Product> cartList){
+    public String removeProduct(@PathVariable int id, @ModelAttribute(name = "cart") List<Product> cartList, RedirectAttributes redirectAttributes){
         Product product = cartList.get(id);
         cartList.remove(id);
+        redirectAttributes.addFlashAttribute("message", "Deleted successfully!");
         product.setAmount(product.getAmount()+1);
         productService.save(product);
         return "redirect:/list-cart";
