@@ -1,9 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-}
-body{
-    overflow:hidden;
+    height: auto;
 }
 .header{
     width: 100%;
@@ -15,6 +13,7 @@ body{
     width: 100px;
     margin: 10px;
     float: left;
+    margin-left: 40px;
 }
 .header-right{
     float: right;
@@ -66,5 +65,23 @@ body{
 .btn-view:link, .btn-view:hover, .btn-view:visited{
     text-decoration: none;
     color: black;
+}
+.btn-view, .btn-edit, .btn-delete{
+    font-size: 16px;
+}
+table{
+    padding: 10px;
+    box-shadow: 5px 10px 8px #888888;
+    background-color: #F8F9FA;
+}
+#merge{
+    font-size: 14px;
+}
+.form-inline{
+    float: right;
+    margin-right: 30px;
+}
+.mgr{
+    width: 80%;
 }
 

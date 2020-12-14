@@ -1,12 +1,11 @@
 package com.codeym.repository;
 
 import com.codeym.model.Customer;
+import com.codeym.model.Employee;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
-public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-    Page<Customer> findByNameContaining(String searchString, Pageable pageable);
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
+    Page<Employee> findByNameContaining(String searchString, Pageable pageable);
 }

@@ -16,7 +16,7 @@ import javax.swing.text.html.Option;
 import java.util.Optional;
 
 @Controller
-public class MainController {
+public class CustomerController {
     @Autowired
     private CustomerService customerService;
     @Autowired
@@ -26,15 +26,14 @@ public class MainController {
         return "index";
     }
     @GetMapping("/customer")
-    public String getAllCustomer(@PageableDefault(size = 6) Pageable pageable, @RequestParam Optional<String> searchName,
+    public String getAllCustomer(@PageableDefault(size = 6) Pageable pageable, @RequestParam Optional<String> searchNameCustomer,
                                  Model model, RedirectAttributes redirectAttributes){
         String stringAfterCheck = "";
-        if (searchName.isPresent()){
-            stringAfterCheck = searchName.get();
-            model.addAttribute("customerList", customerService.search(stringAfterCheck, pageable));
-        } else {
+        if (!searchNameCustomer.isPresent()){
             model.addAttribute("customerList", customerService.findAll(pageable));
-            redirectAttributes.addFlashAttribute("message", "The name dosen't exist");
+        } else {
+            stringAfterCheck = searchNameCustomer.get();
+            model.addAttribute("customerList", customerService.search(stringAfterCheck, pageable));
         }
         model.addAttribute("stringAfterCheck", stringAfterCheck);
         return "/customer/customer_list";
@@ -74,4 +73,5 @@ public class MainController {
         model.addAttribute("customer", customerService.findById(id));
         return "/customer/view";
     }
+
 }
