@@ -25,7 +25,7 @@
             let searchName = $("#inputName").val();
             $.ajax({
                 type: "GET", //GET, DELETE, PUT...
-                url: "http://localhost:8080/blog-api/search-name/" + searchName,
+                url: "http://localhost:8083/blog-api/search-name/" + searchName,
                 dataType: "json",
                 success: function(blog){
                     let table ="";

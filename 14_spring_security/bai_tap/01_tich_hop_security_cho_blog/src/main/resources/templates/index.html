@@ -101,11 +101,21 @@
             </tr>
             </tbody>
         </table>
-        <a class="page-link" th:if="${blogList.hasPrevious()}" th:href="@{/(page = ${blogList.number - 1})}">Previous</a>
-        <span th:text="${blogList.number + 1}"></span>/<span th:text="${blogList.totalPages}"></span>
+<!--        <a class="page-link" th:if="${blogList.hasPrevious()}" th:href="@{/(page = ${blogList.number - 1})}">Previous</a>-->
+<!--        <span th:text="${blogList.number + 1}"></span>/<span th:text="${blogList.totalPages}"></span>-->
 
-        <a class="page-link"  th:if="${blogList.hasNext()}" th:href="@{/(page = ${blogList.number + 1})}">Next</a>
-        <p th:text="${message}"></p>
+<!--        <a class="page-link"  th:if="${blogList.hasNext()}" th:href="@{/(page = ${blogList.number + 1})}">Next</a>-->
+<!--        <p th:text="${message}"></p>-->
+<!--        <a th:if="${blogList.hasPrevious()}" th:href="@{/blog(page = ${blogList.number - 1}, keyword = ${stringAfterCheck})}">Previous</a>-->
+<!--        <span th:text="${blogList.number + 1}"></span>/<span th:text="${blogList.totalPages}"></span>-->
+<!--        <a th:if="${blogList.hasNext()}" th:href="@{/blog(page = ${blogList.number + 1}, keyword = ${stringAfterCheck})}">Next</a>-->
+        <!--    <div th:utext="${contentBlog}"></div>-->
+        <th:block th:each="i: ${#numbers.sequence(0, blogList.totalPages - 1)}">
+            <a th:href="@{/blog(page = ${i}, keyword = ${stringAfterCheck})}" th:text="${i + 1}"></a>
+        </th:block>
+        <a th:href="@{/blog(page = 0, keyword = ${stringAfterCheck})}">First</a>
+        <a th:href="@{/blog(page = ${blogList.totalPages - 1}, keyword = ${stringAfterCheck})}">Last</a>
+
     </div>
 </body>
 </html>
